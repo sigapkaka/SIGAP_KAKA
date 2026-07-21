@@ -5187,25 +5187,20 @@ HEADER VERIFIKATOR - HP
 
     .header .logo-header{
 
-        display:block !important;
+    display:block !important;
 
-        width:100px !important;
+    width:68px !important;
 
-        height:100px !important;
+    height:68px !important;
 
-        min-width:100px !important;
+    min-width:68px !important;
 
-        max-width:100px !important;
+    max-width:68px !important;
 
-        object-fit:contain !important;
+    object-fit:contain !important;
 
-        margin:0 auto !important;
-
-        position:relative !important;
-
-        z-index:2 !important;
-
-    }
+    margin:0 auto !important;
+}
 
     /* ==========================================
        AREA BRAND
