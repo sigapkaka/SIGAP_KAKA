@@ -16,13 +16,21 @@ window.onload = function () {
 
     loadDashboard();
 
+    loadData();
+
+    loadKomoditi();
+
+    loadKomoditasSlider();
+
+    loadGaleri();
+
     loadPeta();
 
     setTimeout(function () {
 
         document.getElementById("loading").style.display = "none";
 
-    }, 1000);
+    },1000);
 
 };
 
@@ -555,36 +563,6 @@ document.getElementById("filterKomoditi")
 
 document.getElementById("filterTanggal")
 .addEventListener("change", filterData);
-
-function filterData(){
-
-    const komoditi = document.getElementById("filterKomoditi").value;
-    const tglInput = document.getElementById("filterTanggal").value;
-    const keyword = document.getElementById("search").value.toLowerCase();
-
-    // Jika tidak memilih tanggal, tampilkan data terbaru
-    if(tglInput == ""){
-
-        let hasil = dataHarga;
-
-        if(komoditi != ""){
-            hasil = hasil.filter(item => item.komoditi == komoditi);
-        }
-
-        if(keyword != ""){
-            hasil = hasil.filter(item =>
-                item.komoditi.toLowerCase().includes(keyword)
-            );
-        }
-
-        tampilkanTabel(hasil);
-        buatGrafik(hasil);
-        return;
-    }
-
-    // Format yyyy-mm-dd menjadi dd/MM/yyyy
-    const p = tglInput.split("-");
-    const tanggal = p[2] + "/" + p[1] + "/" + p[0];
 
     async function filterData() {
 
