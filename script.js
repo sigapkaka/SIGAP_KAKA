@@ -12,18 +12,9 @@ const API = "https://script.google.com/macros/s/AKfycby4Nj4f_VqvNUXb64WcOfIoowbz
 /*==============================
 LOAD APLIKASI
 ==============================*/
-
 window.onload = function () {
 
     loadDashboard();
-
-    loadData();
-
-    loadKomoditasSlider();
-
-    loadKomoditi();
-
-    loadGaleri();
 
     loadPeta();
 
