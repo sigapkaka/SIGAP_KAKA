@@ -184,8 +184,6 @@ ${status}
 LOAD KOMODITI
 ==============================*/
 
-function loadKomoditi() {
-
     async function loadKomoditi() {
 
     try {
@@ -588,27 +586,62 @@ function filterData(){
     const p = tglInput.split("-");
     const tanggal = p[2] + "/" + p[1] + "/" + p[0];
 
-    google.script.run
-    .withSuccessHandler(function(data){
+    async function filterData() {
 
-        // Search berdasarkan keyword
-        if(keyword != ""){
+    const komoditi = document.getElementById("filterKomoditi").value;
+    const tglInput = document.getElementById("filterTanggal").value;
+    const keyword = document.getElementById("search").value.toLowerCase();
 
-            data = data.filter(function(item){
+    if (tglInput == "") {
 
-                return item.komoditi
-                    .toLowerCase()
-                    .includes(keyword);
+        let hasil = dataHarga;
 
-            });
+        if (komoditi != "") {
+            hasil = hasil.filter(item => item.komoditi == komoditi);
+        }
+
+        if (keyword != "") {
+            hasil = hasil.filter(item =>
+                item.komoditi.toLowerCase().includes(keyword)
+            );
+        }
+
+        tampilkanTabel(hasil);
+        buatGrafik(hasil);
+        return;
+
+    }
+
+    const p = tglInput.split("-");
+    const tanggal = p[2] + "/" + p[1] + "/" + p[0];
+
+    try {
+
+        const response = await fetch(
+            API +
+            "?action=getHargaFilter" +
+            "&tanggal=" + encodeURIComponent(tanggal) +
+            "&komoditi=" + encodeURIComponent(komoditi)
+        );
+
+        let data = await response.json();
+
+        if (keyword != "") {
+
+            data = data.filter(item =>
+                item.komoditi.toLowerCase().includes(keyword)
+            );
 
         }
 
         tampilkanTabel(data);
         buatGrafik(data);
 
-    })
-    .getHargaFilter(tanggal, komoditi);
+    } catch (err) {
+
+        console.error(err);
+
+    }
 
 }
 
@@ -771,81 +804,60 @@ function getEmojiKomoditas(nama){
    LOAD SLIDER KOMODITAS
 ========================================== */
 
-function loadKomoditasSlider() {
+async function loadKomoditasSlider() {
 
-    google.script.run
-        .withSuccessHandler(function(data) {
+    try {
 
-            const track =
-                document.getElementById("komoditasTrack");
+        const response = await fetch(API + "?action=getKomoditi");
+        const data = await response.json();
 
-            if (!track) return;
+        const track = document.getElementById("komoditasTrack");
 
-            track.innerHTML = "";
+        if (!track) return;
 
-            let html = "";
+        let html = "";
 
-            data.forEach(function(item) {
+        data.forEach(function(item){
 
-                const nama = item.nama || item;
+            const nama = item.nama || item;
 
-                html += `
-                    <div class="komoditas-item">
+            html += `
+            <div class="komoditas-item">
 
-                        <div class="komoditas-foto">
+                <div class="komoditas-foto">
+                    <span class="emoji-komoditas">
+                        ${getEmojiKomoditas(nama)}
+                    </span>
+                </div>
 
-                            <span class="emoji-komoditas">
-                                ${getEmojiKomoditas(nama)}
-                            </span>
+                <div class="komoditas-nama">
+                    ${nama}
+                </div>
 
-                        </div>
+            </div>
+            `;
 
-                        <div class="komoditas-nama">
-                            ${nama}
-                        </div>
+        });
 
-                    </div>
-                `;
+        track.innerHTML = html + html;
 
-            });
+    } catch(err){
 
-            /* DUPLIKASI AGAR SLIDER TIDAK PUTUS */
+        console.error(err);
 
-            track.innerHTML = html + html;
-
-        })
-        .getKomoditi();
+    }
 
 }
-
 /* ==========================================
    BUKA LOGIN VERIFIKATOR
 ========================================== */
 
 function bukaLoginVerifikator(){
 
-    google.script.run
-
-        .withSuccessHandler(function(url){
-
-            window.top.location.href =
-                url + "?page=LoginVerifikator";
-
-        })
-
-        .withFailureHandler(function(error){
-
-            alert(
-                "Gagal membuka login verifikator:\n" +
-                error.message
-            );
-
-        })
-
-        .getWebAppUrl();
+    window.location.href =
+    "https://script.google.com/macros/s/AKfycby4Nj4f_VqvNUXb64WcOfIoowbzS_mEXdo6jJqaZLcFjzw4erkFkGmrAFMrgGxn9diy/exec?page=LoginVerifikator";
 
 }
-
 /* ======================================
    GALERI FOTO SIGAP KAKA
 ====================================== */
@@ -853,31 +865,28 @@ function bukaLoginVerifikator(){
 let dataGaleri = [];
 let indexGaleri = 0;
 
-function loadGaleri(){
+async function loadGaleri() {
 
-    google.script.run
-        .withSuccessHandler(function(data){
+    try {
 
-            dataGaleri = data;
+        const response = await fetch(API + "?action=getGaleri");
+        dataGaleri = await response.json();
 
-            if(dataGaleri.length > 0){
+        if (dataGaleri.length > 0) {
 
-                tampilGaleri();
+            tampilGaleri();
 
-                setInterval(nextGaleri,10000);
+            setInterval(nextGaleri, 10000);
 
-            }
+        }
 
-        })
-        .withFailureHandler(function(err){
+    } catch(err){
 
-            alert(err.message);
+        console.error(err);
 
-        })
-        .getGaleri();
+    }
 
 }
-
 function tampilGaleri(){
 
     if(dataGaleri.length === 0) return;
