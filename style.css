@@ -5146,13 +5146,13 @@ HEADER VERIFIKATOR - HP
         display:grid !important;
 
         grid-template-columns:
-            72px
+            76px
             minmax(0, 1fr)
-            72px !important;
+            76px !important;
 
         align-items:center !important;
 
-        gap:5px !important;
+        gap:8px !important;
 
         width:100% !important;
 
