@@ -113,57 +113,6 @@ justify-content:center;
 align-items:center;
 
 }
-
-/*==========================
-HEADER
-==========================*/
-
-.header{
-    background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047);
-    color:white;
-    padding:30px 0;
-    box-shadow:0 8px 20px rgba(0,0,0,.20);
-    border-bottom-left-radius:20px;
-    border-bottom-right-radius:20px;
-    background-size:200% 200%;
-    animation:headerGradient 12s ease infinite;
-    position:relative;
-}
-
-@keyframes headerGradient{
-
-    0%{
-
-        background-position:left center;
-
-    }
-
-    50%{
-
-        background-position:right center;
-
-    }
-
-    100%{
-
-        background-position:left center;
-
-    }
-
-}
-
-.header h5{
-    font-size:22px;
-    font-weight:500;
-    color:#f8f9fa;
-}
-
-.header p{
-    margin-top:12px;
-    font-size:15px;
-    color:#ecf0f1;
-    line-height:1.6;
-}
 /*==========================
 RUNNING TEXT
 ==========================*/
@@ -1896,51 +1845,6 @@ grid-template-columns:1fr;
 }
 
 }
-
-/*==================================================
-LOGO KHUSUS HEADER
-==================================================*/
-
-.logo-header{
-
-    width:120px !important;
-    height:120px !important;
-
-    max-width:none !important;
-
-    object-fit:contain;
-
-    transition:
-        transform .35s ease;
-
-    filter:
-        drop-shadow(
-            0 5px 9px rgba(0,0,0,.25)
-        );
-
-}
-
-.logo-header:hover{
-
-    transform:scale(1.06);
-
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .logo-header{
-
-        width:95px !important;
-        height:95px !important;
-
-        margin-bottom:12px;
-
-    }
-
-}
-
 /*==================================================
 BRANDING LOGO SIGAP KAKA
 ==================================================*/
@@ -2454,49 +2358,6 @@ AREA UTAMA WEB
     position:relative;
 
 }
-
-/*==================================================
-GARIS AKSEN HEADER DAN FOOTER
-==================================================*/
-
-.header::before,
-.footer::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:12px;
-    right:12px;
-
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(229,190,83,.35) 20%,
-            rgba(229,190,83,.75) 50%,
-            rgba(229,190,83,.35) 80%,
-            transparent 100%
-        );
-
-    pointer-events:none;
-
-}
-
-.header::before{
-
-    bottom:0;
-
-}
-
-.footer::before{
-
-    top:0;
-
-}
-
 /*==================================================
 FRAME TEPI BODY - HP
 ==================================================*/
@@ -7768,6 +7629,143 @@ PETA KABUPATEN KUPANG
 .header-center h1{
 
     font-size:34px;
+
+}
+
+}
+
+/*=========================
+HEADER BARU
+=========================*/
+
+.hero-header{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #f4f9f1
+    );
+
+    padding:25px 20px;
+
+    border-bottom:5px solid #2E7D32;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        140px
+        1fr
+        140px;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.hero-logo{
+
+    text-align:center;
+
+}
+
+.hero-logo img{
+
+    width:110px;
+
+    transition:.3s;
+
+}
+
+.hero-logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+.logo-sigap{
+
+    width:80px;
+
+    margin-bottom:10px;
+
+}
+
+.hero-title{
+
+    text-align:center;
+
+}
+
+.hero-title h1{
+
+    font-size:52px;
+
+    font-weight:800;
+
+    color:#205b39;
+
+    margin-bottom:5px;
+
+    letter-spacing:1px;
+
+}
+
+.hero-title h4{
+
+    font-size:23px;
+
+    color:#444;
+
+    margin-bottom:12px;
+
+}
+
+.hero-title p{
+
+    margin-bottom:4px;
+
+    font-weight:600;
+
+}
+
+.hero-title small{
+
+    color:#777;
+
+}
+
+@media(max-width:768px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-title h1{
+
+font-size:34px;
+
+}
+
+.hero-title h4{
+
+font-size:18px;
+
+}
+
+.hero-logo img{
+
+width:80px;
 
 }
 
