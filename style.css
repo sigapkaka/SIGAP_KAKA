@@ -5792,7 +5792,7 @@ HEADER VERIFIKATOR - HP
 
     color:#f5d77b;
 
-    font-size:11px;
+    font-size:15px;
 
     font-weight:700;
 
@@ -6425,7 +6425,7 @@ HEADER VERIFIKATOR - HP
 
         padding:0 !important;
 
-        font-size:7px !important;
+        font-size:12px !important;
 
         font-weight:700 !important;
 
@@ -6659,17 +6659,15 @@ text-shadow:
 
     width:100%;
 
-    aspect-ratio:16/9;
+    height:auto;
 
-    object-fit:cover;
+    max-height:420px;
+
+    object-fit:contain;
 
     display:block;
 
-    transform:scale(1);
-
-    animation:kenburns 10s ease-in-out forwards;
-
-    transition:opacity .5s ease
+    background:#fff;
 
 }
 
@@ -6692,11 +6690,29 @@ text-shadow:
 
     }
 
-    .galeri-slider img{
+   @media(max-width:768px){
 
-        height:180px;
+    .galeri-slider{
+
+        margin:15px auto;
+
+        border-radius:15px;
 
     }
+
+    .galeri-slider img{
+
+        width:100%;
+
+        height:auto;
+
+        max-height:260px;
+
+        object-fit:contain;
+
+    }
+
+}
 
 }
 
@@ -6712,15 +6728,11 @@ text-shadow:
 
     width:100%;
 
-    height:360px;
+    height:auto;
 
-    object-fit:cover;
+    max-height:420px;
 
-    display:block;
-
-    transform:scale(1);
-
-    animation:kenburns 10s linear forwards;
+    object-fit:contain;
 
 }
 
