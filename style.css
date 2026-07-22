@@ -7540,11 +7540,9 @@ PETA KABUPATEN KUPANG
 
 }
 
-/* =========================
-   Ukuran Logo Header
-========================= */
-
-/* HEADER BARU */
+/*=========================================
+HEADER SIGAP KAKA
+=========================================*/
 
 .header-flex{
 
@@ -7552,19 +7550,25 @@ PETA KABUPATEN KUPANG
     align-items:center;
     justify-content:space-between;
 
-    gap:15px;
+    gap:20px;
 
     width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:15px 20px;
 
 }
 
 .header-logo{
 
-    flex:0 0 70px;
+    flex:0 0 80px;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
 }
 
@@ -7578,21 +7582,67 @@ PETA KABUPATEN KUPANG
 
 .logo-kiri{
 
-    width:70px;
+    width:75px;
+
     height:auto;
 
 }
 
 .logo-kanan{
 
-    width:55px;
+    width:60px;
+
     height:auto;
 
 }
 
-@media(max-width:768px){
+.logo-app{
+
+    width:70px;
+
+    margin-bottom:8px;
+
+}
+
+.header-center h1{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#1b5e20;
+
+    margin:0;
+
+    line-height:1.1;
+
+}
+
+.header-center p{
+
+    margin:4px 0;
+
+    font-size:17px;
+
+}
+
+.header-center small{
+
+    font-size:13px;
+
+    color:#666;
+
+}
+
+/*=========================
+RESPONSIVE HP
+=========================*/
+
+@media (max-width:768px){
 
 .header-flex{
+
+    padding:10px 8px;
 
     gap:8px;
 
@@ -7600,25 +7650,45 @@ PETA KABUPATEN KUPANG
 
 .header-logo{
 
-    flex:0 0 60px;
+    flex:0 0 55px;
 
 }
 
 .logo-kiri{
 
-    width:58px;
+    width:50px;
 
 }
 
 .logo-kanan{
 
-    width:48px;
+    width:42px;
+
+}
+
+.logo-app{
+
+    width:42px;
+
+    margin-bottom:4px;
 
 }
 
 .header-center h1{
 
-    font-size:34px;
+    font-size:24px;
+
+}
+
+.header-center p{
+
+    font-size:11px;
+
+}
+
+.header-center small{
+
+    font-size:9px;
 
 }
 
