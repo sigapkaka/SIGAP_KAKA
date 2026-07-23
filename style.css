@@ -113,6 +113,57 @@ justify-content:center;
 align-items:center;
 
 }
+
+/*==========================
+HEADER
+==========================*/
+
+.header{
+    background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047);
+    color:white;
+    padding:30px 0;
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+    background-size:200% 200%;
+    animation:headerGradient 12s ease infinite;
+    position:relative;
+}
+
+@keyframes headerGradient{
+
+    0%{
+
+        background-position:left center;
+
+    }
+
+    50%{
+
+        background-position:right center;
+
+    }
+
+    100%{
+
+        background-position:left center;
+
+    }
+
+}
+
+.header h5{
+    font-size:22px;
+    font-weight:500;
+    color:#f8f9fa;
+}
+
+.header p{
+    margin-top:12px;
+    font-size:15px;
+    color:#ecf0f1;
+    line-height:1.6;
+}
 /*==========================
 RUNNING TEXT
 ==========================*/
@@ -182,6 +233,59 @@ font-weight:bold;
 opacity:.25;
 
 }
+
+}
+
+/* =====================================================
+   CARD DASHBOARD
+   SIGAP KAKA
+===================================================== */
+
+.dashboard-card{
+
+    position:relative;
+
+    width:100%;
+
+    height:150px;
+    min-height:150px;
+    max-height:150px;
+
+    box-sizing:border-box;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    padding:24px 20px;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        68px;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    box-shadow:
+        0 10px 25px rgba(34,60,43,.13),
+        0 2px 5px rgba(34,60,43,.08);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    cursor:pointer;
+
+    isolation:isolate;
 
 }
 
@@ -1727,6 +1831,8 @@ color:#43845a;
 ADMIN RESPONSIVE
 ==================================================*/
 
+@media(max-width:768px){
+
 .admin-container{
 
 padding-top:18px;
@@ -1790,6 +1896,51 @@ grid-template-columns:1fr;
 }
 
 }
+
+/*==================================================
+LOGO KHUSUS HEADER
+==================================================*/
+
+.logo-header{
+
+    width:120px !important;
+    height:120px !important;
+
+    max-width:none !important;
+
+    object-fit:contain;
+
+    transition:
+        transform .35s ease;
+
+    filter:
+        drop-shadow(
+            0 5px 9px rgba(0,0,0,.25)
+        );
+
+}
+
+.logo-header:hover{
+
+    transform:scale(1.06);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .logo-header{
+
+        width:95px !important;
+        height:95px !important;
+
+        margin-bottom:12px;
+
+    }
+
+}
+
 /*==================================================
 BRANDING LOGO SIGAP KAKA
 ==================================================*/
@@ -1989,6 +2140,8 @@ LOGO SIGAP KAKA FOOTER - WARNA ASLI
 LOGO FOOTER - TAMPILAN HP
 ==================================================*/
 
+@media(max-width:768px){
+
     .footer-logo-sigap{
 
         width:85px !important;
@@ -2005,6 +2158,8 @@ LOGO FOOTER - TAMPILAN HP
 /*==================================================
 RESPONSIVE FOOTER LOGO
 ==================================================*/
+
+@media(max-width:768px){
 
     .footer-brand{
 
@@ -2228,6 +2383,8 @@ GARIS AKSEN BRAND SIGAP KAKA
 SIGAP KAKA - MOBILE
 ==================================================*/
 
+@media(max-width:768px){
+
     .sigap-title{
 
         font-size:29px !important;
@@ -2297,9 +2454,54 @@ AREA UTAMA WEB
     position:relative;
 
 }
+
+/*==================================================
+GARIS AKSEN HEADER DAN FOOTER
+==================================================*/
+
+.header::before,
+.footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:12px;
+    right:12px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(229,190,83,.35) 20%,
+            rgba(229,190,83,.75) 50%,
+            rgba(229,190,83,.35) 80%,
+            transparent 100%
+        );
+
+    pointer-events:none;
+
+}
+
+.header::before{
+
+    bottom:0;
+
+}
+
+.footer::before{
+
+    top:0;
+
+}
+
 /*==================================================
 FRAME TEPI BODY - HP
 ==================================================*/
+
+@media(max-width:768px){
 
     body{
 
@@ -2975,6 +3177,8 @@ LOADING / EMPTY / ERROR
 VERIFIKASI MOBILE
 ==================================================*/
 
+@media(max-width:768px){
+
     .verifikasi-page{
 
         padding:15px 10px;
@@ -3039,6 +3243,26 @@ VERIFIKASI MOBILE
     }
 
 }
+
+/*==================================================
+ACTION VERIFIKASI
+==================================================*/
+
+.verifikasi-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:18px;
+
+    padding-top:18px;
+
+    border-top:
+        1px solid #edf1ed;
+
+}
+
 
 /*==================================================
 TOMBOL SETUJUI
@@ -3133,6 +3357,19 @@ TOMBOL SETUJUI
 
 }
 
+/*==================================================
+TOMBOL SETUJUI - HP
+==================================================*/
+
+@media(max-width:768px){
+
+    .verifikasi-actions{
+
+        justify-content:stretch;
+
+    }
+
+
     .btn-verifikasi-setujui{
 
         width:100%;
@@ -3210,6 +3447,8 @@ TOMBOL VERIFIKATOR
 /*==================================================
 TOMBOL VERIFIKATOR - HP
 ==================================================*/
+
+@media(max-width:768px){
 
     .btn-verifikator{
 
@@ -3700,6 +3939,8 @@ FOOTER LOGIN
 LOGIN VERIFIKATOR - HP
 ==================================================*/
 
+@media(max-width:768px){
+
     .login-verifikator-page{
 
         padding:15px 10px;
@@ -3821,6 +4062,39 @@ TOMBOL TOLAK VERIFIKASI
 
 }
 
+
+/*==================================================
+ACTION VERIFIKASI DUA TOMBOL
+==================================================*/
+
+.verifikasi-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+/*==================================================
+TOMBOL TOLAK - HP
+==================================================*/
+
+@media(max-width:768px){
+
+    .verifikasi-actions{
+
+        flex-direction:column-reverse;
+
+        align-items:stretch;
+
+    }
+
+
     .btn-verifikasi-tolak,
     .btn-verifikasi-setujui{
 
@@ -3829,6 +4103,28 @@ TOMBOL TOLAK VERIFIKASI
         min-width:0;
 
     }
+
+}
+
+/*==================================================
+STATUS PENGAJUAN ADMIN
+==================================================*/
+
+.admin-status-section{
+
+    margin-top:24px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:#ffffff;
+
+    border:
+        1px solid rgba(47,125,78,.12);
+
+    box-shadow:
+        0 9px 25px rgba(32,68,47,.07);
 
 }
 
@@ -3869,6 +4165,23 @@ TOMBOL TOLAK VERIFIKASI
     font-weight:750;
 
 }
+
+.admin-status-section{
+
+    margin-top:30px;
+
+    margin-bottom:30px;
+
+    border-radius:20px;
+
+    padding:24px;
+
+    background:#fff;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
 
 .admin-status-list{
 
@@ -4130,6 +4443,20 @@ TOMBOL TOLAK VERIFIKASI
 
 }
 
+
+/*==================================================
+STATUS PENGAJUAN - HP
+==================================================*/
+
+@media(max-width:768px){
+
+    .admin-status-section{
+
+        padding:15px;
+
+    }
+
+
     .admin-status-item{
 
         align-items:flex-start;
@@ -4266,6 +4593,8 @@ TOMBOL LOGOUT VERIFIKATOR
 HEADER VERIFIKATOR - HP
 ==================================================*/
 
+@media(max-width:768px){
+
     .verifikasi-header-actions{
 
         gap:6px;
@@ -4301,6 +4630,269 @@ HEADER VERIFIKATOR - HP
     }
 
 }
+
+    /* ==========================================
+       HEADER
+    ========================================== */
+
+    .header{
+
+        padding:
+            18px 8px 22px 8px !important;
+
+        min-height:auto !important;
+
+        overflow:visible !important;
+
+    }
+
+    /* ==========================================
+       ROW HEADER
+    ========================================== */
+
+    .header .row{
+
+        position:relative !important;
+
+        display:grid !important;
+
+        grid-template-columns:
+            68px
+            minmax(0, 1fr)
+            68px !important;
+
+        align-items:center !important;
+
+        gap:5px !important;
+
+        margin:0 !important;
+
+        width:100% !important;
+
+    }
+
+    /* ==========================================
+       KOLOM BOOTSTRAP HEADER
+    ========================================== */
+
+    .header .row > div{
+
+        width:100% !important;
+
+        max-width:none !important;
+
+        padding:
+            0 2px !important;
+
+    }
+
+    /* ==========================================
+       LOGO
+    ========================================== */
+
+    .header .logo{
+
+        width:65px !important;
+
+        height:65px !important;
+
+        min-width:65px !important;
+
+        max-width:65px !important;
+
+        object-fit:contain !important;
+
+        display:block !important;
+
+        margin:
+            0 auto !important;
+
+    }
+
+    /* ==========================================
+       JUDUL SIGAP KAKA
+    ========================================== */
+
+    .header h1{
+
+        margin:
+            0 0 7px 0 !important;
+
+        padding:0 !important;
+
+        font-size:
+            25px !important;
+
+        line-height:
+            1.1 !important;
+
+        letter-spacing:
+            .2px !important;
+
+        text-align:
+            center !important;
+
+        white-space:
+            nowrap !important;
+
+        overflow:
+            visible !important;
+
+    }
+
+    /* ==========================================
+       TAGLINE
+    ========================================== */
+
+    .header .tagline,
+    .header .motto{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        margin:
+            0 auto 7px auto !important;
+
+        padding:
+            0 3px !important;
+
+        box-sizing:
+            border-box !important;
+
+        font-size:
+            6px !important;
+
+        line-height:
+            1.5 !important;
+
+        letter-spacing:
+            .4px !important;
+
+        text-align:
+            center !important;
+
+        white-space:
+            normal !important;
+
+        overflow:
+            visible !important;
+
+        text-overflow:
+            clip !important;
+
+        word-break:
+            normal !important;
+
+    }
+
+    /* ==========================================
+       SUBTITLE
+    ========================================== */
+
+    .header h5{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        margin:
+            5px auto !important;
+
+        padding:
+            0 2px !important;
+
+        font-size:
+            13px !important;
+
+        line-height:
+            1.25 !important;
+
+        text-align:
+            center !important;
+
+        white-space:
+            normal !important;
+
+        overflow:
+            visible !important;
+
+    }
+
+    /* ==========================================
+       INSTANSI
+    ========================================== */
+
+    .header p{
+
+        width:100% !important;
+
+        margin:
+            6px auto 0 auto !important;
+
+        padding:0 !important;
+
+        font-size:
+            7px !important;
+
+        line-height:
+            1.45 !important;
+
+        text-align:
+            center !important;
+
+        white-space:
+            normal !important;
+
+        overflow:
+            visible !important;
+
+    }
+
+    /* ==========================================
+       DASHBOARD CARD
+    ========================================== */
+
+    .dashboard-card{
+
+        width:100% !important;
+
+        height:112px !important;
+
+        min-height:112px !important;
+
+        max-height:112px !important;
+
+        overflow:hidden;
+
+        position:relative;
+
+        backdrop-filter:blur(12px);
+
+        -webkit-backdrop-filter:blur(12px);
+
+        padding:
+            15px 13px !important;
+
+        display:grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            46px !important;
+
+        align-items:
+            center !important;
+
+        gap:
+            7px !important;
+
+        border-radius:
+            16px !important;
+
+        box-sizing:
+            border-box !important;
+
+    }
 
     /* ==========================================
        NILAI DASHBOARD
@@ -4468,6 +5060,322 @@ HEADER VERIFIKATOR - HP
 
     }
 
+    /* ==========================
+       SUB JUDUL
+    ========================== */
+
+    .header h5{
+
+        margin:
+            5px auto !important;
+
+        padding:
+            0 2px !important;
+
+        font-size:
+            13px !important;
+
+        line-height:
+            1.25 !important;
+
+        text-align:
+            center !important;
+
+        white-space:
+            normal !important;
+
+    }
+
+    /* ==========================
+       INSTANSI
+    ========================== */
+
+    .header p{
+
+        margin:
+            5px auto 0 !important;
+
+        font-size:
+            7px !important;
+
+        line-height:
+            1.4 !important;
+
+        text-align:
+            center !important;
+
+        white-space:
+            normal !important;
+
+    }
+
+    /* ==========================================
+       HEADER
+    ========================================== */
+
+    .header{
+
+        padding:18px 6px 22px !important;
+
+        overflow:hidden !important;
+
+    }
+
+    /* ==========================================
+       CONTAINER HEADER
+    ========================================== */
+
+    .header .container{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        padding:0 12px !important;
+
+        margin:0 auto !important;
+
+    }
+
+    /* ==========================================
+       ROW HEADER
+    ========================================== */
+
+    .header .row{
+
+        display:grid !important;
+
+        grid-template-columns:
+            76px
+            minmax(0, 1fr)
+            76px !important;
+
+        align-items:center !important;
+
+        gap:8px !important;
+
+        width:100% !important;
+
+        margin:0 !important;
+
+    }
+
+    /* ==========================================
+       RESET KOLOM BOOTSTRAP
+    ========================================== */
+
+    .header .row > .col-md-2,
+    .header .row > .col-md-8{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        padding:0 !important;
+
+        margin:0 !important;
+
+        flex:none !important;
+
+    }
+
+    /* ==========================================
+       LOGO KIRI DAN KANAN
+    ========================================== */
+
+    .header .logo-header{
+
+    display:block !important;
+
+    width:68px !important;
+
+    height:68px !important;
+
+    min-width:68px !important;
+
+    max-width:68px !important;
+
+    object-fit:contain !important;
+
+    margin:0 auto !important;
+}
+
+    /* ==========================================
+       AREA BRAND
+    ========================================== */
+
+    .header .sigap-brand{
+
+        width:100% !important;
+
+        min-width:0 !important;
+
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        gap:5px !important;
+
+        margin:0 0 5px !important;
+
+        padding:0 !important;
+
+    }
+
+    /* ==========================================
+       LOGO KECIL SIGAP
+    ========================================== */
+
+    .header .logo-sigap-kaka{
+
+        width:27px !important;
+
+        height:27px !important;
+
+        min-width:27px !important;
+
+        object-fit:contain !important;
+
+    }
+
+    /* ==========================================
+       SIGAP KAKA
+    ========================================== */
+
+    .header .sigap-title{
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        font-size:25px !important;
+
+        line-height:1 !important;
+
+        letter-spacing:.3px !important;
+
+        white-space:nowrap !important;
+
+    }
+
+    /* ==========================================
+       MOTTO
+    ========================================== */
+
+    .header .sigap-motto{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        gap:3px !important;
+
+        margin:5px auto 7px !important;
+
+        padding:0 !important;
+
+        box-sizing:border-box !important;
+
+        overflow:hidden !important;
+
+    }
+
+    /* ==========================================
+       TEKS MOTTO
+    ========================================== */
+
+    .header .motto-text{
+
+        display:block !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        font-size:6px !important;
+
+        font-weight:600 !important;
+
+        line-height:1.45 !important;
+
+        letter-spacing:.25px !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+        overflow:visible !important;
+
+        text-overflow:clip !important;
+
+        word-break:normal !important;
+
+    }
+
+    /* ==========================================
+       SUB JUDUL
+    ========================================== */
+
+    .header h5{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        margin:5px auto !important;
+
+        padding:0 !important;
+
+        font-size:13px !important;
+
+        line-height:1.3 !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+    }
+
+    /* ==========================================
+       INSTANSI
+    ========================================== */
+
+    .header p{
+
+        width:100% !important;
+
+        margin:6px auto 0 !important;
+
+        padding:0 !important;
+
+        font-size:7px !important;
+
+        line-height:1.45 !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+    }
+
     /* ==========================================
        GARIS BAWAH HEADER
     ========================================== */
@@ -4480,6 +5388,112 @@ HEADER VERIFIKATOR - HP
 
     }
 
+    /* =================================================
+       HEADER
+    ================================================= */
+
+    .header{
+
+        padding:18px 6px 22px !important;
+
+        overflow:hidden !important;
+
+        min-height:auto !important;
+
+    }
+
+    .header .container{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        padding-left:4px !important;
+
+        padding-right:4px !important;
+
+        margin-left:auto !important;
+
+        margin-right:auto !important;
+
+    }
+
+    /* =================================================
+       HEADER 3 KOLOM
+    ================================================= */
+
+    .header .row{
+
+        display:grid !important;
+
+        grid-template-columns:
+            68px
+            minmax(0, 1fr)
+            68px !important;
+
+        align-items:center !important;
+
+        column-gap:4px !important;
+
+        row-gap:0 !important;
+
+        width:100% !important;
+
+        margin:0 !important;
+
+    }
+
+    .header .row > .col-md-2,
+    .header .row > .col-md-8{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        flex:none !important;
+
+        padding:0 !important;
+
+        margin:0 !important;
+
+    }
+
+    /* =================================================
+       AREA BRAND SIGAP KAKA
+    ================================================= */
+
+    .header .sigap-brand{
+
+        position:relative !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        min-height:0 !important;
+
+        display:flex !important;
+
+        flex-direction:row !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        gap:5px !important;
+
+        margin:0 auto 5px !important;
+
+        padding:0 0 6px !important;
+
+        overflow:visible !important;
+
+    }
+
     .header .sigap-brand::after{
 
         width:100px !important;
@@ -4489,9 +5503,40 @@ HEADER VERIFIKATOR - HP
     }
 
     /* =================================================
+       LOGO KECIL SIGAP KAKA
+    ================================================= */
+
+    .header .logo-sigap-kaka{
+
+        display:block !important;
+
+        width:27px !important;
+
+        height:27px !important;
+
+        min-width:27px !important;
+
+        max-width:27px !important;
+
+        min-height:27px !important;
+
+        margin:0 !important;
+
+        padding:1px !important;
+
+        border-radius:5px !important;
+
+        object-fit:contain !important;
+
+        flex:0 0 27px !important;
+
+    }
+
+    /* =================================================
        JUDUL SIGAP KAKA
     ================================================= */
 
+    .header .sigap-title,
     .header .sigap-brand h1{
 
         width:auto !important;
@@ -4518,9 +5563,37 @@ HEADER VERIFIKATOR - HP
 
     }
 
+    /* =================================================
+       MOTTO
+    ================================================= */
+
+    .header .sigap-motto{
+
+        position:relative !important;
+
+        display:block !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:5px auto 7px !important;
+
+        padding:0 1px !important;
+
+        box-sizing:border-box !important;
+
+        overflow:visible !important;
+
+        text-align:center !important;
+
+    }
+
     /* GARIS MOTTO HILANG KHUSUS HP */
 
-    .motto-line{
+    .header .motto-line{
 
         display:none !important;
 
@@ -4528,7 +5601,7 @@ HEADER VERIFIKATOR - HP
 
     /* TEKS MOTTO */
 
-  .motto-text{
+    .header .motto-text{
 
         display:block !important;
 
@@ -4569,6 +5642,70 @@ HEADER VERIFIKATOR - HP
     }
 
     /* =================================================
+       SISTEM INFORMASI HARGA PANGAN
+    ================================================= */
+
+    .header h5{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        margin:5px auto !important;
+
+        padding:0 1px !important;
+
+        font-size:12px !important;
+
+        font-weight:500 !important;
+
+        line-height:1.25 !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+        overflow:visible !important;
+
+    }
+
+    /* =================================================
+       NAMA DINAS
+    ================================================= */
+
+    .header p{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        margin:5px auto 0 !important;
+
+        padding:0 !important;
+
+        font-size:6.5px !important;
+
+        line-height:1.45 !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+        overflow:visible !important;
+
+    }
+
+    .header .header-line{
+
+        width:70px !important;
+
+        margin:8px auto 0 !important;
+
+        border-width:1px !important;
+
+    }
+
+    /* =================================================
        4 KARTU DASHBOARD
     ================================================= */
 
@@ -4590,6 +5727,41 @@ HEADER VERIFIKATOR - HP
         flex:0 0 50% !important;
 
         display:flex !important;
+
+    }
+
+
+    .dashboard-card{
+
+        position:relative !important;
+
+        width:100% !important;
+
+        height:112px !important;
+
+        min-height:112px !important;
+
+        max-height:112px !important;
+
+        margin:0 !important;
+
+        padding:14px 12px !important;
+
+        display:grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            44px !important;
+
+        align-items:center !important;
+
+        gap:6px !important;
+
+        box-sizing:border-box !important;
+
+        border-radius:16px !important;
+
+        overflow:hidden !important;
 
     }
 
@@ -4745,6 +5917,7 @@ HEADER VERIFIKATOR - HP
 
 }
 
+
 .sigap-motto-full .motto-text{
 
     display:block;
@@ -4759,7 +5932,7 @@ HEADER VERIFIKATOR - HP
 
     color:#f5d77b;
 
-    font-size:15px;
+    font-size:11px;
 
     font-weight:700;
 
@@ -4792,7 +5965,9 @@ HEADER VERIFIKATOR - HP
    MOTTO FULL WIDTH - HP
 ===================================================== */
 
-    .sigap-motto-full{
+@media screen and (max-width:576px){
+
+    .header .sigap-motto-full{
 
         width:100% !important;
 
@@ -4816,45 +5991,47 @@ HEADER VERIFIKATOR - HP
 
     }
 
-   .sigap-motto-full .motto-line{
+    .header .sigap-motto-full .motto-line{
 
         display:none !important;
 
     }
 
-   .sigap-motto-full .motto-text{
+    .header .sigap-motto-full .motto-text{
 
-    display:block !important;
+        display:block !important;
 
-    width:100% !important;
+        width:100% !important;
 
-    max-width:100% !important;
+        max-width:100% !important;
 
-    min-width:0 !important;
+        min-width:0 !important;
 
-    margin:0 auto !important;
+        margin:0 auto !important;
 
-    padding:0 !important;
+        padding:0 !important;
 
-    font-size:13px !important;
+        font-size:7px !important;
 
-    font-weight:800 !important;
+        font-weight:700 !important;
 
-    line-height:1.5 !important;
+        line-height:1.4 !important;
 
-    letter-spacing:0.8px !important;
+        letter-spacing:.35px !important;
 
-    text-align:center !important;
+        text-align:center !important;
 
-    white-space:normal !important;
+        white-space:normal !important;
 
-    overflow:visible !important;
+        overflow:visible !important;
 
-    text-overflow:clip !important;
+        text-overflow:clip !important;
 
-    overflow-wrap:normal !important;
+        overflow-wrap:normal !important;
 
-    word-break:normal !important;
+        word-break:normal !important;
+
+    }
 
 }
 
@@ -4863,6 +6040,202 @@ HEADER VERIFIKATOR - HP
    SIGAP KAKA
    MEMPERBESAR LOGO DAN TULISAN
 ===================================================== */
+
+@media screen and (min-width:577px){
+
+    /* ==========================================
+       HEADER
+    ========================================== */
+
+    .header{
+
+        min-height:300px !important;
+
+        padding:28px 20px 32px !important;
+
+        display:flex !important;
+
+        align-items:center !important;
+
+        overflow:hidden !important;
+
+    }
+
+    .header .container{
+
+        width:100% !important;
+
+        max-width:1400px !important;
+
+        margin:0 auto !important;
+
+        padding-left:18px !important;
+        padding-right:18px !important;
+
+    }
+
+    /* ==========================================
+       SUSUNAN HEADER
+       LOGO | INFORMASI | LOGO
+    ========================================== */
+
+    .header .row{
+
+        display:grid !important;
+
+        grid-template-columns:
+            180px
+            minmax(0, 1fr)
+            180px !important;
+
+        align-items:center !important;
+
+        column-gap:30px !important;
+
+        width:100% !important;
+
+        margin:0 !important;
+
+    }
+
+    .header .row > .col-md-2,
+    .header .row > .col-md-8{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        padding:0 !important;
+
+        margin:0 !important;
+
+        flex:none !important;
+
+    }
+
+    /* ==========================================
+       BRAND SIGAP KAKA
+    ========================================== */
+
+    .header .sigap-brand{
+
+        width:100% !important;
+
+        display:flex !important;
+
+        flex-direction:row !important;
+
+        justify-content:center !important;
+        align-items:center !important;
+
+        gap:12px !important;
+
+        margin:0 auto 14px !important;
+
+        padding:0 !important;
+
+    }
+
+    /* LOGO KECIL SIGAP */
+
+    .header .logo-sigap-kaka{
+
+        width:60px !important;
+        height:60px !important;
+
+        min-width:60px !important;
+        max-width:60px !important;
+
+        flex:0 0 65px !important;
+
+        margin:0 !important;
+
+        padding:4px !important;
+
+        object-fit:contain !important;
+
+        border-radius:10px !important;
+
+    }
+
+    /* ==========================================
+       JUDUL SIGAP KAKA
+    ========================================== */
+
+    .header .sigap-title{
+
+        width:auto !important;
+
+        min-width:0 !important;
+
+        margin:0 !important;
+        padding:0 !important;
+
+        font-size:52px !important;
+
+        font-weight:800 !important;
+
+        line-height:1 !important;
+
+        letter-spacing:1.5px !important;
+
+        white-space:nowrap !important;
+
+    }
+
+    /* ==========================================
+       SISTEM INFORMASI HARGA PANGAN
+    ========================================== */
+
+    .header h5{
+
+        width:100% !important;
+
+        max-width:900px !important;
+
+        margin:12px auto 0 !important;
+
+        padding:0 10px !important;
+
+        font-size:27px !important;
+
+        font-weight:600 !important;
+
+        line-height:1.3 !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+    }
+
+    /* ==========================================
+       NAMA DINAS
+    ========================================== */
+
+    .header p{
+
+        width:100% !important;
+
+        max-width:750px !important;
+
+        margin:15px auto 0 !important;
+
+        padding:0 !important;
+
+        font-size:16px !important;
+
+        font-weight:500 !important;
+
+        line-height:1.55 !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+    }
 
     /* ==========================================
        GARIS HEADER
@@ -4936,11 +6309,213 @@ HEADER VERIFIKATOR - HP
    HEADER + DASHBOARD
 ===================================================== */
 
+@media screen and (max-width:576px){
+
+    /* =================================================
+       HEADER
+    ================================================= */
+
+    .header{
+
+        padding:18px 6px 20px !important;
+
+        border-bottom-left-radius:14px;
+        border-bottom-right-radius:14px;
+
+        overflow:hidden !important;
+
+    }
+
+    .header .container{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        padding-left:4px !important;
+        padding-right:4px !important;
+
+        margin:0 auto !important;
+
+    }
+
+    /* =================================================
+       ROW HEADER
+       LOGO | BRAND | LOGO
+    ================================================= */
+
+    .header .row{
+
+        display:grid !important;
+
+        grid-template-columns:
+            64px
+            minmax(0, 1fr)
+            64px !important;
+
+        align-items:center !important;
+
+        column-gap:4px !important;
+
+        row-gap:0 !important;
+
+        width:100% !important;
+
+        margin:0 !important;
+
+    }
+
+    .header .row > .col-md-2,
+    .header .row > .col-md-8{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        padding:0 !important;
+
+        margin:0 !important;
+
+        flex:none !important;
+
+    }
+
+    /* =================================================
+       BRAND SIGAP KAKA
+    ================================================= */
+
+    .header .sigap-brand{
+
+        width:100% !important;
+
+        min-width:0 !important;
+
+        min-height:0 !important;
+
+        display:flex !important;
+
+        flex-direction:row !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        gap:5px !important;
+
+        margin:0 auto 5px !important;
+
+        padding:0 0 5px !important;
+
+    }
+
+    .header .logo-sigap-kaka{
+
+        display:block !important;
+
+        width:26px !important;
+        height:26px !important;
+
+        min-width:26px !important;
+        max-width:26px !important;
+
+        min-height:26px !important;
+
+        flex:0 0 26px !important;
+
+        margin:0 !important;
+
+        padding:1px !important;
+
+        object-fit:contain !important;
+
+        border-radius:5px !important;
+
+    }
+
+    .header .sigap-title{
+
+        width:auto !important;
+
+        min-width:0 !important;
+        min-height:0 !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        font-size:23px !important;
+
+        line-height:1 !important;
+
+        letter-spacing:.2px !important;
+
+        white-space:nowrap !important;
+
+    }
+
     .header .sigap-brand::after{
 
         width:95px !important;
 
         height:1px !important;
+
+    }
+
+    /* =================================================
+       SUB JUDUL
+    ================================================= */
+
+    .header h5{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        margin:5px auto !important;
+
+        padding:0 2px !important;
+
+        font-size:11px !important;
+
+        line-height:1.3 !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+    }
+
+    /* =================================================
+       NAMA DINAS
+    ================================================= */
+
+    .header p{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        margin:5px auto 0 !important;
+
+        padding:0 !important;
+
+        font-size:6.5px !important;
+
+        line-height:1.45 !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+    }
+
+    .header .header-line{
+
+        width:65px !important;
+
+        margin:7px auto 0 !important;
 
     }
 
@@ -4992,7 +6567,7 @@ HEADER VERIFIKATOR - HP
 
         padding:0 !important;
 
-        font-size:12px !important;
+        font-size:7px !important;
 
         font-weight:700 !important;
 
@@ -5039,7 +6614,47 @@ HEADER VERIFIKATOR - HP
         display:flex !important;
 
     }
-    
+
+    /* =================================================
+       DASHBOARD CARD
+       SEMUA UKURAN SAMA
+    ================================================= */
+
+    .dashboard-card{
+
+        position:relative !important;
+
+        width:100% !important;
+
+        height:112px !important;
+
+        min-height:112px !important;
+
+        max-height:112px !important;
+
+        margin:0 !important;
+
+        padding:14px 11px !important;
+
+        display:grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            43px !important;
+
+        align-items:center !important;5000
+
+        gap:6px !important;
+
+        box-sizing:border-box !important;
+
+        border-radius:16px !important;
+
+        overflow:hidden !important;
+
+    }
+
+
     .dashboard-card > div:not(.icon),
     .dashboard-card > div:first-child{
 
@@ -5058,6 +6673,7 @@ HEADER VERIFIKATOR - HP
         justify-content:center !important;
 
     }
+
 
     /* =================================================
        ANGKA DASHBOARD
@@ -5185,15 +6801,17 @@ text-shadow:
 
     width:100%;
 
-    height:auto;
+    aspect-ratio:16/9;
 
-    max-height:420px;
-
-    object-fit:contain;
+    object-fit:cover;
 
     display:block;
 
-    background:#fff;
+    transform:scale(1);
+
+    animation:kenburns 10s ease-in-out forwards;
+
+    transition:opacity .5s ease
 
 }
 
@@ -5208,33 +6826,19 @@ text-shadow:
 
 }
 
-    .galeri-slider{
-
-        margin:15px auto;
-
-    }
+@media(max-width:768px){
 
     .galeri-slider{
 
         margin:15px auto;
-
-        border-radius:15px;
 
     }
 
     .galeri-slider img{
 
-        width:100%;
-
-        height:auto;
-
-        max-height:260px;
-
-        object-fit:contain;
+        height:180px;
 
     }
-
-}
 
 }
 
@@ -5250,11 +6854,31 @@ text-shadow:
 
     width:100%;
 
-    height:auto;
+    height:360px;
 
-    max-height:420px;
+    object-fit:cover;
 
-    object-fit:contain;
+    display:block;
+
+    transform:scale(1);
+
+    animation:kenburns 10s linear forwards;
+
+}
+
+.admin-status-section{
+
+    margin-top:30px;
+
+    margin-bottom:30px;
+
+    border-radius:20px;
+
+    padding:24px;
+
+    background:#fff;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 }
 
@@ -5830,19 +7454,17 @@ JUDUL
     height:65px !important;
 }
 
-/* Logo BAPANAS */
+/* Logo BAPANAS lebih kecil */
 .logo-kanan{
-    width:auto !important;
-    height:65px !important;
-    object-fit:contain;
+    width:55px !important;
+    height:55px !important;
 }
 
 @media (max-width:768px){
 
     .logo-kanan{
-        width:auto !important;
-        height:50px !important;
-        object-fit:contain;
+        width:55px !important;
+        height:55px !important;
     }
 
 }
@@ -6057,409 +7679,16 @@ PETA KABUPATEN KUPANG
 
 }
 
-/*=========================
-RESPONSIVE HP
-=========================*/
-
-@media (max-width:768px){
-
-.header-flex{
-
-    padding:10px 8px;
-
-    gap:8px;
-
-}
-
-.header-logo{
-
-    flex:0 0 55px;
-
-}
+/* =========================
+   Ukuran Logo Header
+========================= */
 
 .logo-kiri{
-
-    width:50px;
-
+    width:68px !important;
+    height:68px !important;
 }
 
 .logo-kanan{
-
-    width:42px;
-
-}
-
-.logo-app{
-
-    width:42px;
-
-    margin-bottom:4px;
-
-}
-
-.header-center h1{
-
-    font-size:24px;
-
-}
-
-.header-center p{
-
-    font-size:11px;
-
-}
-
-.header-center small{
-
-    font-size:9px;
-
-}
-
-}
-/*==================================================
-HEADER SIGAP KAKA FINAL
-==================================================*/
-
-.header{
-    padding:18px 6px 22px;
-    min-height:auto;
-    overflow:hidden;
-}
-
-.header .container{
-    width:100%;
-    max-width:100%;
-    margin:0 auto;
-    padding:0 8px;
-}
-
-.header .row{
-    display:grid;
-    grid-template-columns:68px minmax(0,1fr) 68px;
-    align-items:center;
-    gap:6px;
-    margin:0;
-    width:100%;
-}
-
-.header .row>.col-md-2,
-.header .row>.col-md-8{
-    width:100%;
-    max-width:100%;
-    min-width:0;
-    margin:0;
-    padding:0;
-    flex:none;
-}
-
-/* Logo kiri & kanan */
-
-.header .logo-header{
-    width:68px;
-    height:68px;
-    object-fit:contain;
-    display:block;
-    margin:auto;
-}
-
-/* Brand */
-
-.header .sigap-brand{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:6px;
-    margin:0 0 6px;
-    padding:0;
-}
-
-.header .logo-sigap-kaka{
-    width:27px;
-    height:27px;
-    object-fit:contain;
-}
-
-/* Judul */
-
-.header .sigap-title,
-.header h1{
-    margin:0 0 6px;
-    font-size:25px;
-    line-height:1.1;
-    letter-spacing:.3px;
-    text-align:center;
-    white-space:nowrap;
-}
-
-/* Motto */
-
-.sigap-motto{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:4px;
-    margin:5px 0 7px;
-}
-
-.header .motto-text{
-    font-size:6px;
-    line-height:1.45;
-    text-align:center;
-    font-weight:600;
-}
-
-/* Subtitle */
-
-.header h5{
-    margin:5px 0;
-    font-size:13px;
-    line-height:1.3;
-    text-align:center;
-}
-
-/* Instansi */
-
-.header p{
-    margin:5px 0 0;
-    font-size:7px;
-    line-height:1.45;
-    text-align:center;
-}
-
-/* Responsive */
-
-@media(max-width:768px){
-
-.header{
-    padding:16px 4px 20px;
-}
-
-.header .row{
-    grid-template-columns:58px minmax(0,1fr) 58px;
-    gap:4px;
-}
-
-.header .logo-header{
-    width:58px;
-    height:58px;
-}
-
-.header .sigap-title,
-.header h1{
-    font-size:22px;
-}
-
-.header .motto-text{
-    font-size:6px;
-}
-
-.header h5{
-    font-size:12px;
-}
-
-.header p{
-    font-size:7px;
-}
-
-}
-
-/* ==================================================
-   MOBILE FINAL GITHUB
-================================================== */
-
-@media (max-width:768px){
-
-.header-flex{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    gap:10px;
-
-    padding:15px 12px;
-
-    text-align:center;
-
-}
-
-.header-logo{
-
-    width:70px;
-
-}
-
-.logo-header{
-
-    width:65px !important;
-    height:65px !important;
-
-    object-fit:contain;
-
-}
-
-.header-center{
-
-    width:100%;
-
-}
-
-.logo-title{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
-}
-
-.logo-app{
-
-    width:180px;
-    max-width:85%;
-
-    margin-bottom:10px;
-
-}
-
-.logo-title h1{
-
-    font-size:32px;
-
-    margin-bottom:4px;
-
-}
-
-.logo-title p{
-
-    font-size:14px;
-
-    margin-bottom:2px;
-
-}
-
-.logo-title small{
-
-    font-size:11px;
-
-}
-
-.sigap-motto{
-
-    padding:8px 12px;
-
-}
-
-.motto-text{
-
-    font-size:11px;
-
-    text-align:center;
-
-}
-
-.running{
-
-    height:36px;
-
-    line-height:36px;
-
-}
-
-.running-text{
-
-    font-size:13px;
-
-}
-
-/* Dashboard */
-
-.dashboard-card{
-
-    min-height:125px;
-
-    padding:18px;
-
-}
-
-.dashboard-card h2{
-
-    font-size:30px;
-
-}
-
-.dashboard-card p{
-
-    font-size:13px;
-
-}
-
-.dashboard-card .icon{
-
-    width:55px;
-    height:55px;
-
-    min-width:55px;
-
-    font-size:24px;
-
-}
-
-/* Galeri */
-
-.galeri-slider img{
-
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
-
-}
-
-/* SOP */
-
-.sop-card{
-
-    padding:18px 12px;
-
-}
-
-/* Chart */
-
-#chartHarga{
-
-    height:300px !important;
-
-}
-
-/* Table */
-
-.table{
-
-    font-size:12px;
-
-}
-
-/* Footer */
-
-.footer{
-
-    text-align:center;
-
-}
-
-.footer-brand{
-
-    flex-direction:column;
-
-}
-
-.footer-logo-sigap{
-
-    width:70px !important;
-    height:70px !important;
-
-}
-
+    width:55px !important;
+    height:55px !important;
 }
