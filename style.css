@@ -7290,6 +7290,31 @@ JUDUL
     max-width:none !important;
 }
 
+.header-flex .logo-kiri:hover,
+.header-flex .logo-app:hover,
+.header-flex .logo-kanan:hover{
+    transform:scale(1.06);
+}
+
+@media (max-width:768px){
+
+    .header-flex .logo-kiri{
+        width:90px !important;
+        height:auto !important;
+    }
+
+    .header-flex .logo-app{
+        width:70px !important;
+        height:auto !important;
+    }
+
+    .header-flex .logo-kanan{
+        width:90px !important;
+        height:auto !important;
+    }
+
+}
+
 /*==================================================
 BADGE TANGGAL
 ==================================================*/
