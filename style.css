@@ -164,6 +164,63 @@ HEADER
     color:#ecf0f1;
     line-height:1.6;
 }
+
+/*==================================================
+HEADER FLEX
+==================================================*/
+
+.header-flex{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:20px;
+    background:#ffffff;
+    border-radius:0 0 20px 20px;
+}
+
+.header-logo{
+    flex:0 0 90px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.header-center{
+    flex:1;
+    text-align:center;
+}
+
+.logo-title{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.logo-app{
+    width:180px;
+    max-width:100%;
+    height:auto;
+    margin-bottom:12px;
+}
+
+.logo-title h1{
+    font-size:34px;
+    font-weight:700;
+    margin:0;
+    color:#146c43;
+}
+
+.logo-title p{
+    margin:5px 0;
+    font-size:16px;
+}
+
+.logo-title small{
+    font-size:13px;
+    color:#555;
+}
+
 /*==========================
 RUNNING TEXT
 ==========================*/
@@ -1903,24 +1960,16 @@ LOGO KHUSUS HEADER
 
 .logo-header{
 
-    width:120px !important;
-    height:120px !important;
-
-    max-width:none !important;
+    width:70px !important;
+    height:70px !important;
 
     object-fit:contain;
 
-    transition:
-        transform .35s ease;
-
-    filter:
-        drop-shadow(
-            0 5px 9px rgba(0,0,0,.25)
-        );
+    filter:drop-shadow(0 3px 8px rgba(0,0,0,.18));
 
 }
 
-.logo-header:hover{
+:hover{
 
     transform:scale(1.06);
 
@@ -7691,4 +7740,49 @@ PETA KABUPATEN KUPANG
 .logo-kanan{
     width:55px !important;
     height:55px !important;
+}
+
+@media (max-width:768px){
+
+.header-flex{
+
+    flex-direction:column;
+
+    gap:10px;
+
+    padding:15px;
+
+}
+
+.logo-app{
+
+    width:160px;
+
+}
+
+.logo-header{
+
+    width:55px !important;
+    height:55px !important;
+
+}
+
+.logo-title h1{
+
+    font-size:28px;
+
+}
+
+.logo-title p{
+
+    font-size:14px;
+
+}
+
+.logo-title small{
+
+    font-size:12px;
+
+}
+
 }
