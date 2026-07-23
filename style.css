@@ -166,59 +166,32 @@ HEADER
 }
 
 /*==================================================
-HEADER FLEX
+HEADER
 ==================================================*/
 
 .header-flex{
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     gap:20px;
-    padding:20px;
-    background:#ffffff;
-    border-radius:0 0 20px 20px;
-}
 
-.header-logo{
-    flex:0 0 90px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+    padding:22px 35px;
 
-.header-center{
-    flex:1;
-    text-align:center;
-}
+    background:linear-gradient(
+        135deg,
+        #0b7d3b 0%,
+        #198754 45%,
+        #35a84b 100%
+    );
 
-.logo-title{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
+    color:#fff;
 
-.logo-app{
-    width:140px;
-    max-width:100%;
-    height:auto;
-    margin-bottom:8px;
-}
+    border-bottom:5px solid #f4c542;
 
-.logo-title h1{
-    font-size:34px;
-    font-weight:700;
-    margin:0;
-    color:#146c43;
-}
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 
-.logo-title p{
-    margin:5px 0;
-    font-size:16px;
-}
-
-.logo-title small{
-    font-size:13px;
-    color:#555;
 }
 
 /*==========================
@@ -1951,42 +1924,6 @@ grid-template-columns:1fr;
     padding:16px 20px;
 
 }
-
-}
-
-/*==================================================
-LOGO KHUSUS HEADER
-==================================================*/
-
-.logo-header{
-
-    width:70px !important;
-    height:70px !important;
-
-    object-fit:contain;
-
-    filter:drop-shadow(0 3px 8px rgba(0,0,0,.18));
-
-}
-
-.logo-header:hover{
-
-    transform:scale(1.06);
-
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .logo-header{
-
-        width:95px !important;
-        height:95px !important;
-
-        margin-bottom:12px;
-
-    }
 
 }
 
@@ -5231,27 +5168,6 @@ HEADER VERIFIKATOR - HP
     }
 
     /* ==========================================
-       LOGO KIRI DAN KANAN
-    ========================================== */
-
-    .header .logo-header{
-
-    display:block !important;
-
-    width:68px !important;
-
-    height:68px !important;
-
-    min-width:68px !important;
-
-    max-width:68px !important;
-
-    object-fit:contain !important;
-
-    margin:0 auto !important;
-}
-
-    /* ==========================================
        AREA BRAND
     ========================================== */
 
@@ -7728,68 +7644,73 @@ PETA KABUPATEN KUPANG
 
 }
 
-/* =========================
-   Ukuran Logo Header
-========================= */
+/*==================================================
+HEADER LOGO BARU
+==================================================*/
 
+/* Logo Kabupaten */
 .logo-kiri{
+
+    width:82px !important;
+    height:82px !important;
+
+    object-fit:contain;
+
+    transition:.3s;
+
+}
+
+/* Logo SIGAP KAKA */
+.logo-app{
+
+    width:95px !important;
+    height:auto;
+
+    transition:.3s;
+
+}
+
+/* Logo BAPANAS */
+.logo-kanan{
+
     width:68px !important;
     height:68px !important;
+
+    object-fit:contain;
+
+    transition:.3s;
+
 }
 
-.logo-kanan{
-    width:55px !important;
-    height:55px !important;
+/* Hover */
+.logo-kiri:hover,
+.logo-app:hover,
+.logo-kanan:hover{
+
+    transform:scale(1.06);
+
 }
 
-@media (max-width:768px){
+/* HP */
+@media(max-width:768px){
 
-.header-flex{
+.logo-kiri{
 
-    flex-direction:column;
-
-    gap:10px;
-
-    padding:15px;
+    width:62px !important;
+    height:62px !important;
 
 }
 
 .logo-app{
 
-    width:160px;
+    width:82px !important;
 
 }
 
-.logo-header{
+.logo-kanan{
 
-    width:55px !important;
-    height:55px !important;
-
-}
-
-.logo-title h1{
-
-    font-size:28px;
-
-}
-
-.logo-title p{
-
-    font-size:14px;
-
-}
-
-.logo-title small{
-
-    font-size:12px;
-
-}
-
-}
-
-.logo-title small{
-
-    font-size:12px;
+    width:52px !important;
+    height:52px !important;
 
 }
 
